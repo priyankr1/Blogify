@@ -3,10 +3,109 @@
   <head>
     <%- include('./partials/head') %>
     <title>Add New Blog Page</title>
+    <style>
+      /* Body and container styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  animation: slideUp 1s ease-in-out;
+}
+
+/* Label styling */
+.form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input fields and textarea styling */
+input[type="text"], input[type="file"], textarea {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus effect for inputs and textarea */
+input[type="text"]:focus, input[type="file"]:focus, textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* Button styling */
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s ease;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* Button hover effect */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Hover effect for inputs and textarea */
+input[type="text"]:hover, input[type="file"]:hover, textarea:hover {
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Textarea specific styles */
+textarea {
+  resize: none;
+  transition: height 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+    </style>
   </head>
 
   <body>
-    <%- include('./partials/nav') %>
     <div class="container mt-3">
       <form action="/blog" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
